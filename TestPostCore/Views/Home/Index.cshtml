@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    @using (Html.BeginForm("Search", "Search", FormMethod.Post))
+    {
+    <div class="card-body">
+        <div class="form-group">
+            <label for="term">What are you looking for?</label>
+            @Html.TextBox("term")
+        </div>
+        <input type="submit" class="btn btn-primary" hidden="hidden" id="btnSearch" />
+        @Html.Hidden("magic", DateTime.Now)
+    </div>
+    }
+</div>
